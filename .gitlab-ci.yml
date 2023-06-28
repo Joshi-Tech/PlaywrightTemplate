@@ -1,4 +1,23 @@
+stages:
+  - test
+  - sonar
+
+test:
+  stage: test
+  image:
+    name: mcr.microsoft.com/playwright:v1.29.2-jammy
+  script:
+    - npm install
+    - npx playwright install chromium
+    - npm run ci
+  artifacts:
+    when: always
+    paths:
+      - reports/
+    expire_in: 1 week
+
 sonarqube-check:
+  stage: sonar
   image:
     name: sonarsource/sonar-scanner-cli:latest
     entrypoint: [""]

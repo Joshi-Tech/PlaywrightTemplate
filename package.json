@@ -22,7 +22,7 @@
     "allure": "allure serve reports/allure-results",
     "debug:ios": "set BROWSER=ios & npm run debug",
     "test:ios": "set BROWSER=ios & npm run test",
-    "ci": "cucumber-js --parallel=2 --retry=1"
+    "ci": "HEADLESS=1 cucumber-js --parallel=2 --retry=1"
   },
   "engines": {
     "node": ">=14"
