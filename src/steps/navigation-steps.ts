@@ -16,7 +16,7 @@ When(/^I click on (.+)$/, async function (this: ICustomWorld, link) {
       await this.allPageObjects!.homePage.clickContactLink();
       break;
     case 'Quality Engineering':
-      await this.allPageObjects!.homePage.clickQualityEngineeringLink();
+      await this.allPageObjects!.homePage.getGualityEngineeringLink();
       break;
     default:
       throw error(`Unable to click link: ${link}`);
