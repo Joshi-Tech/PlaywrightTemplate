@@ -8,8 +8,8 @@ export class HomePage extends BasePage {
 
   public get elements() {
     return {
-      techAcademyLink: this.page.getByRole('link', { name: 'Tech Academy' }).nth(0),
-      contactLink: this.page.getByRole('link', { name: 'Contact' }).nth(0),
+      techAcademyLink: this.page.getByRole('link', { name: 'Tech Academy ' }),
+      contactLink: this.page.locator('#menu-item-4956').getByRole('link', { name: 'Contact' }),
       consultantServicesLink: this.page.getByRole('link', { name: 'Consultancy Services ' }),
       qualityEngineeringLink: this.page.getByRole('link', { name: 'Quality Engineering'})
       
