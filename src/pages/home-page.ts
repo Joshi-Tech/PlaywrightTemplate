@@ -33,16 +33,12 @@ export class HomePage extends BasePage {
     await expect(this.page).toHaveTitle('Contact - Ten10');
   }
 
-  async clickConsultantServicesLink() {
-    await this.elements.consultantServicesLink.click();
+  async hoverConsultantServicesLink() {
+    await this.elements.consultantServicesLink.hover();
   }
   
   async clickQualityEngineeringLink() {
-    await this.elements.qualityEngineeringLink.click();
-  }
-
-  async getGualityEngineeringLink() {
-    await this.clickConsultantServicesLink();
+    await this.hoverConsultantServicesLink();
     await this.elements.qualityEngineeringLink.click();
   }
 
