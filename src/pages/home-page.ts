@@ -12,7 +12,6 @@ export class HomePage extends BasePage {
       contactLink: this.page.locator('#menu-item-4956').getByRole('link', { name: 'Contact' }),
       consultantServicesLink: this.page.getByRole('link', { name: 'Consultancy Services ' }),
       qualityEngineeringLink: this.page.getByRole('link', { name: 'Quality Engineering'})
-      
     };
   }
 
@@ -45,6 +44,6 @@ export class HomePage extends BasePage {
 
   async checkQualityEngineeringPageTitle() {
     await this.clickQualityEngineeringLink();
-    await expect(this.page).toHaveTitle('Contact-Ten10');
+    await expect(this.page).toHaveTitle('Quality Engineering | Ten10');
   }
 }

@@ -11,4 +11,9 @@ Feature: Navigation examples using Playwright and Cucumber
       | link                | title                        |
       | Tech Academy        | Tech Academy                 |
       | Contact             | Contact                      |
-      | Quality Engineering | Quality                      |
+ 
+  @navigation @example
+  Scenario Outline: Navigate to Quality Engineering and verify title
+    Given I am on the Ten10 homepage
+    When I click Quality Engineering of the list
+    Then the page title is

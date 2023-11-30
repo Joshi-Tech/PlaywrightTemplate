@@ -27,3 +27,11 @@ Then(/^the page title contains '(.+)'$/, async function (this: ICustomWorld, exp
   await this.allPageObjects!.basePage.waitForTitleTextToAppear(expectedTitle);
   await expect(await this.page!.title()).toContain(expectedTitle);
 });
+
+When('I click Quality Engineering of the list', async function () {
+  await this.allPageObjects!.homePage.clickQualityEngineeringLink();
+});
+
+Then('the page title is', async function (this: ICustomWorld) {
+  await this.allPageObjects!.homePage.checkQualityEngineeringPageTitle()
+});
