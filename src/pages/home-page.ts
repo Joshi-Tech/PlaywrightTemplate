@@ -7,13 +7,14 @@ export class HomePage extends BasePage {
   }
 
   public get elements() {
+    const mainMenu ="#menu-main-menu";
     return {
       techAcademyLink: this.page
-        .locator('#menu-main-menu')
+        .locator(mainMenu)
         .getByRole('link', { name: 'Tech Academy' }),
-      contactLink: this.page.locator('#menu-main-menu').getByRole('link', { name: 'Contact' }),
+      contactLink: this.page.locator(mainMenu).getByRole('link', { name: 'Contact' }),
       consultantServicesLink: this.page
-        .locator('#menu-main-menu')
+        .locator(mainMenu)
         .getByRole('link', { name: 'Consultancy Services' }),
       qualityEngineeringLink: this.page.getByRole('link', { name: 'Quality Engineering' }),
     };
