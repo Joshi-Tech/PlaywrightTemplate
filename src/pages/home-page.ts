@@ -8,10 +8,14 @@ export class HomePage extends BasePage {
 
   public get elements() {
     return {
-      techAcademyLink: this.page.getByRole('link', { name: 'Tech Academy ' }),
-      contactLink: this.page.locator('#menu-item-4956').getByRole('link', { name: 'Contact' }),
-      consultantServicesLink: this.page.getByRole('link', { name: 'Consultancy Services ' }),
-      qualityEngineeringLink: this.page.getByRole('link', { name: 'Quality Engineering'})
+      techAcademyLink: this.page
+        .locator('#menu-main-menu')
+        .getByRole('link', { name: 'Tech Academy' }),
+      contactLink: this.page.locator('#menu-main-menu').getByRole('link', { name: 'Contact' }),
+      consultantServicesLink: this.page
+        .locator('#menu-main-menu')
+        .getByRole('link', { name: 'Consultancy Services' }),
+      qualityEngineeringLink: this.page.getByRole('link', { name: 'Quality Engineering' }),
     };
   }
 
