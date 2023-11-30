@@ -11,4 +11,4 @@ Feature: Navigation examples using Playwright and Cucumber
       | link                | title                        |
       | Tech Academy        | Tech Academy                 |
       | Contact             | Contact                      |
-      | Quality Engineering | Quality Engineering          |
+      | Quality Engineering | Quality                      |
