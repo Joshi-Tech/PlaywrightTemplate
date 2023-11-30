@@ -53,7 +53,7 @@
     "pngjs": "6.0.0"
   },
   "devDependencies": {
-    "@cucumber/cucumber": "^10.0.1",
+    "@cucumber/cucumber": "^8.11.1",
     "@types/expect": "24.3.0",
     "@types/fs-extra": "9.0.13",
     "@types/jsdom": "^20.0.1",
