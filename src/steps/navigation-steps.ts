@@ -27,3 +27,4 @@ Then(/^the page title contains '(.+)'$/, async function (this: ICustomWorld, exp
   await this.allPageObjects!.basePage.waitForTitleTextToAppear(expectedTitle);
   await expect(await this.page!.title()).toContain(expectedTitle);
 });
+

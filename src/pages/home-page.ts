@@ -7,10 +7,16 @@ export class HomePage extends BasePage {
   }
 
   public get elements() {
+    const mainMenu ="#menu-main-menu";
     return {
-      techAcademyLink: this.page.getByRole('link', { name: 'Tech Academy' }).nth(0),
-      contactLink: this.page.getByRole('link', { name: 'Contact' }).nth(0),
-      qualityEngineeringLink: this.page.getByText('Quality Engineering').nth(0),
+      techAcademyLink: this.page
+        .locator(mainMenu)
+        .getByRole('link', { name: 'Tech Academy' }),
+      contactLink: this.page.locator(mainMenu).getByRole('link', { name: 'Contact' }),
+      consultantServicesLink: this.page
+        .locator(mainMenu)
+        .getByRole('link', { name: 'Consultancy Services' }),
+      qualityEngineeringLink: this.page.getByRole('link', { name: 'Quality Engineering' }),
     };
   }
 
@@ -31,11 +37,18 @@ export class HomePage extends BasePage {
     await this.clickContactLink();
     await expect(this.page).toHaveTitle('Contact - Ten10');
   }
+
+  async hoverConsultantServicesLink() {
+    await this.elements.consultantServicesLink.hover();
+  }
+  
   async clickQualityEngineeringLink() {
+    await this.hoverConsultantServicesLink();
     await this.elements.qualityEngineeringLink.click();
   }
+
   async checkQualityEngineeringPageTitle() {
     await this.clickQualityEngineeringLink();
-    await expect(this.page).toHaveTitle('Contact-Ten10');
+    await expect(this.page).toHaveTitle('Quality Engineering | Ten10');
   }
 }
