@@ -5,7 +5,7 @@ stages:
 test:
   stage: test
   image:
-    name: mcr.microsoft.com/playwright:v1.29.2-jammy
+    name: mcr.microsoft.com/playwright:v1.40.0-jammy
   variables:
     USER: "${USER}"
     PASSWORD: "${PASSWORD}"
