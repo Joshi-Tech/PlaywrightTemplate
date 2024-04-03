@@ -33,19 +33,28 @@
   "git.autofetch": true,
   "eslint.alwaysShowStatus": true,
   "eslint.options": {
-    "extensions": [".js", ".ts"]
+    "extensions": [
+      ".js",
+      ".ts"
+    ]
   },
-  "eslint.validate": ["javascript", "typescript"],
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
-
   "cucumberautocomplete.syncfeatures": "./features/**/*.feature",
-  "cucumberautocomplete.steps": ["src/steps/**/*.ts"],
+  "cucumberautocomplete.steps": [
+    "src/steps/**/*.ts"
+  ],
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "[azure-pipelines]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.formatOnType": true,
+  "cucumberautocomplete.customParameters": []
 }

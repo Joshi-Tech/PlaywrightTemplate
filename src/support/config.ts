@@ -13,7 +13,7 @@ const browserOptions: LaunchOptions = {
 export const config = {
   browser: process.env.BROWSER || 'chromium',
   browserOptions,
-  BASE_URL: 'https://www.ten10.com/',
+  BASE_URL: 'https://www.saucedemo.com/',
   IMG_THRESHOLD: { threshold: 0.4 },
   TIMEOUT_EX_SMALL: 1000,
   TIMEOUT_SMALL: 5000,
