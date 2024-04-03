@@ -1,14 +1,19 @@
-import {config} from '../support/config';
 import {BrowserContext, Page} from '@playwright/test';
 import {join} from 'path';
+import 'dotenv/config';
+import { config } from '../support/config';
 
 export class BasePage {
     page: Page;
     context: BrowserContext;
+    standardUser: string;
+    password: string;
 
     constructor(page: Page, context: BrowserContext) {
         this.page = page;
         this.context = context;
+        this.standardUser = `${process.env.USER}`;
+        this.password = `${process.env.PASSWORD}`;
     }
 
     public async goto(optionalUrl?: string) {

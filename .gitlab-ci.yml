@@ -6,6 +6,9 @@ test:
   stage: test
   image:
     name: mcr.microsoft.com/playwright:v1.29.2-jammy
+  variables:
+    USER: "${USER}"
+    PASSWORD: "${PASSWORD}"
   script:
     - npm install
     - npx playwright install chromium

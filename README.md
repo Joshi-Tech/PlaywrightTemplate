@@ -80,3 +80,9 @@ The HTML report can be opened in a web browser by simply copy and pasting the fu
 The tests passes headfully but not headlessly. Because of this reason, the then clause is commented out to stop test from failing in the ci environment. An issue is created for this to be fixed -
 
 https://gitlab.thetestpeople.com/public-group/accelerators/accelerators-wiki/-/issues/16
+
+
+### environmental variables
+
+Copy the file env.example and rename it as .env. Edit the file to contain the correct user credentials.
+Then setup the same variables on the gitlab settings > CI/CD >Variables. 
