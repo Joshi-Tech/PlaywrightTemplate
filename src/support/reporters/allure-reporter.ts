@@ -19,7 +19,7 @@ interface CustomCucumberJSAllureFormatterConfig extends CucumberJSAllureFormatte
 
 export default class CustomAllureReporter extends CucumberJSAllureFormatter {
   
-  /* eslint-disable @typescript-eslint/no-explicit-any */
+ //eslint-disable-next-line
   constructor(options: any) {
     super(
       options,
