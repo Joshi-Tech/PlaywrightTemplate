@@ -10,7 +10,10 @@ export class AllPageObjects {
   productPage: ProductPage;
   cartPage: CartPage;
 
-  constructor(public page: Page, public context: BrowserContext) {
+  constructor(
+    public page: Page,
+    public context: BrowserContext,
+  ) {
     this.basePage = new BasePage(page, context);
     this.loginPage = new LoginPage(page, context);
     this.productPage = new ProductPage(page, context);
