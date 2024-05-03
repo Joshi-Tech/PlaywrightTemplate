@@ -2,7 +2,6 @@ import { BasePage } from './base-page';
 import { BrowserContext, Page } from '@playwright/test';
 
 export class ProductPage extends BasePage {
-
   constructor(page: Page, context: BrowserContext) {
     super(page, context);
   }
@@ -12,12 +11,12 @@ export class ProductPage extends BasePage {
       inventoryItemName: this.page.getByText('Sauce Labs Bolt T-Shirt'),
       addBoltTShirtToCartButton: this.page.locator('#add-to-cart-sauce-labs-bolt-t-shirt'),
       cartButton: this.page.locator('.shopping_cart_badge'),
-      productsText: this.page.getByText('Products')
+      productsText: this.page.getByText('Products'),
     };
   }
 
   async clickAddBoltTShirtToCart() {
-    await this.elements.addBoltTShirtToCartButton.click(); 
+    await this.elements.addBoltTShirtToCartButton.click();
   }
 
   async clickCartButton() {
@@ -25,6 +24,6 @@ export class ProductPage extends BasePage {
   }
 
   async getProductsText() {
-   return this.elements.productsText.textContent();
+    return this.elements.productsText.textContent();
   }
 }
