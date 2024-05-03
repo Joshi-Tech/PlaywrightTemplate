@@ -1,5 +1,6 @@
-import { AllureRuntime } from "allure-js-commons";
-import { CucumberJSAllureFormatter, CucumberJSAllureFormatterConfig } from "allure-cucumberjs";
+import { AllureRuntime } from 'allure-js-commons';
+import { CucumberJSAllureFormatter, CucumberJSAllureFormatterConfig } from 'allure-cucumberjs';
+import { IFormatterOptions } from '@cucumber/cucumber/lib/formatter';
 
 interface CustomLabelMatcher {
   pattern: RegExp[];
@@ -18,45 +19,30 @@ interface CustomCucumberJSAllureFormatterConfig extends CucumberJSAllureFormatte
 }
 
 export default class CustomAllureReporter extends CucumberJSAllureFormatter {
-  
- //eslint-disable-next-line
-  constructor(options: any) {
-    super(
-      options,
-      new AllureRuntime({ resultsDir: "./allure-results" }),
-      {
-        labels: [
-          {
-            pattern: [/@feature:(.*)/],
-            name: "epic",
-          },
-          {
-            pattern: [/@severity:(.*)/],
-            name: "severity",
-          },
-        ],
-        links: [
-          {
-            pattern: [/@issue=(.*)/],
-            type: "issue",
-            urlTemplate: "http://localhost:8080/issue/%s",
-          },
-          {
-            pattern: [/@tms=(.*)/],
-            type: "tms",
-            urlTemplate: "http://localhost:8080/tms/%s",
-          },
-        ],
-      } as CustomCucumberJSAllureFormatterConfig
-    );
+  constructor(options: IFormatterOptions) {
+    super(options, new AllureRuntime({ resultsDir: './allure-results' }), {
+      labels: [
+        {
+          pattern: [/@feature:(.*)/],
+          name: 'epic',
+        },
+        {
+          pattern: [/@severity:(.*)/],
+          name: 'severity',
+        },
+      ],
+      links: [
+        {
+          pattern: [/@issue=(.*)/],
+          type: 'issue',
+          urlTemplate: 'http://localhost:8080/issue/%s',
+        },
+        {
+          pattern: [/@tms=(.*)/],
+          type: 'tms',
+          urlTemplate: 'http://localhost:8080/tms/%s',
+        },
+      ],
+    } as CustomCucumberJSAllureFormatterConfig);
   }
 }
-
-
-
-
-
-
-
-
-
