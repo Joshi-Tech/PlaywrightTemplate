@@ -18,6 +18,7 @@ interface CustomCucumberJSAllureFormatterConfig extends CucumberJSAllureFormatte
   links: CustomLinkMatcher[];
 }
 
+
 export default class CustomAllureReporter extends CucumberJSAllureFormatter {
   constructor(options: IFormatterOptions) {
     super(options, new AllureRuntime({ resultsDir: './allure-results' }), {
